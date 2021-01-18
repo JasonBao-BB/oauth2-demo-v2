@@ -1,0 +1,13 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: zuul
+
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    serviceUrl:
+      #eurekaServers
+      defaultZone: http://localhost:2001/eureka
