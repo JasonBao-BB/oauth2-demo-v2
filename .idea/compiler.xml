@@ -10,6 +10,7 @@
         <module name="oauth2-server-authentication" />
         <module name="oauth2-server-resources" />
         <module name="eureka-server" />
+        <module name="oauth2-server-client" />
         <module name="oauth2-gateway" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="eureka-server" options="-parameters" />
       <module name="oauth2-gateway" options="-parameters" />
       <module name="oauth2-server-authentication" options="-parameters" />
+      <module name="oauth2-server-client" options="-parameters" />
       <module name="oauth2-server-resources" options="-parameters" />
     </option>
   </component>

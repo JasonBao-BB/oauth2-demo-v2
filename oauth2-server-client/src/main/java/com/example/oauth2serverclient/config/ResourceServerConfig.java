@@ -1,4 +1,4 @@
-package com.example.oauth2gateway.config;
+package com.example.oauth2serverclient.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,19 +18,24 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     private TokenStore tokenStore;
 
     @Override
+    public void configure(HttpSecurity http) throws Exception {
+        super.configure(http);
+    }
+
+    @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources
-                .resourceId("weapon")
+        resources.resourceId("weapon")
                 .tokenStore(tokenStore)
                 .stateless(true);
     }
 
-    @Override
-    public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/authorization_server/**").permitAll()
-                .antMatchers("/resource_server/**").permitAll()
-                .antMatchers("/client_server/**").hasAnyRole("USER");
+//    @Bean
+//    public ResourceServerTokenServices tokenServices(){
+//        RemoteTokenServices tokenServices = new RemoteTokenServices();
+//        tokenServices.setClientSecret("secret");
+//        tokenServices.setClientId("c1");
+//        tokenServices.setCheckTokenEndpointUrl("http://localhost:8080/oauth/check_token");
+//        return tokenServices;
+//    }
 
-    }
 }

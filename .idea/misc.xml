@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/oauth2-server-resources/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/oauth2-server-client/pom.xml" />
       </list>
     </option>
   </component>
